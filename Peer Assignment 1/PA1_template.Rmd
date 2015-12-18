@@ -10,6 +10,11 @@ output:
 
 ----------------------------------------------------------------------------------
 
+```{r global options, include=FALSE}
+knitr::opts_chunk$set(fig.path='Figures/', echo=TRUE)
+```
+
+
 ### Introduction
 
 Download the dataset for this assignment to your working directory: [Activity monitoring data](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip)
@@ -26,10 +31,13 @@ The dataset is stored in a comma-separated-value (CSV) file and there are a tota
 
 ### Loading and preprocessing the data
 
-Load the data into R
+1. Load the data into R
 ```{r}
 activity_all <- read.csv("activity.csv")
 ```
+
+2. Process/transform the data (if necessary) into a format suitable for your analysis
+Not done at this step
 
 ----------------------------------------------------------------------------------
 
@@ -48,7 +56,7 @@ total_steps <- aggregate(steps ~ date, activity, sum)
 
 2. Make a histogram of the total number of steps taken each day
 ```{r}
-hist(total_steps$steps, xlab="Total Number of Steps per Day", main="Total Number of Steps Taken Each Day", col="blue")
+hist(total_steps$steps, xlab="Total Number of Steps per Day", main="Total Number of Steps Taken Each Day", col="red")
 ```
 
 3. Calculate and report the mean and median of the total number of steps taken per day
@@ -144,7 +152,7 @@ clean_data$weekday <- as.factor(clean_data$weekday)
 
 2. Make a panel plot containing a time series plot (i.e. `type = "l"`) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).
 
-```{r}
+```{r fig.width = 8}
 ## First, calculate the average number of steps taken per 5-minute interval averaged across all day types
 weekdays_means <- aggregate(clean_data$steps, by=list(clean_data$days, clean_data$weekday, clean_data$interval), FUN="mean")
 ## Rename columns to descriptive names
@@ -156,6 +164,7 @@ xyplot(mean ~ interval | weekday, weekdays_means,
         lwd=1, 
         xlab="Interval", 
         ylab="Number of steps", 
+        main="Average Number of Steps per 5-Minute Interval Averaged Across Each Weekday",
         layout=c(1,2))
 ```
 

@@ -4,6 +4,9 @@ Amber Beasock
 
 ----------------------------------------------------------------------------------
 
+
+
+
 ### Introduction
 
 Download the dataset for this assignment to your working directory: [Activity monitoring data](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip)
@@ -20,11 +23,14 @@ The dataset is stored in a comma-separated-value (CSV) file and there are a tota
 
 ### Loading and preprocessing the data
 
-Load the data into R
+1. Load the data into R
 
 ```r
 activity_all <- read.csv("activity.csv")
 ```
+
+2. Process/transform the data (if necessary) into a format suitable for your analysis
+Not done at this step
 
 ----------------------------------------------------------------------------------
 
@@ -46,10 +52,10 @@ total_steps <- aggregate(steps ~ date, activity, sum)
 2. Make a histogram of the total number of steps taken each day
 
 ```r
-hist(total_steps$steps, xlab="Total Number of Steps per Day", main="Total Number of Steps Taken Each Day", col="blue")
+hist(total_steps$steps, xlab="Total Number of Steps per Day", main="Total Number of Steps Taken Each Day", col="red")
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
+![](Figures/unnamed-chunk-4-1.png) 
 
 3. Calculate and report the mean and median of the total number of steps taken per day
 
@@ -85,7 +91,7 @@ interval_steps <- aggregate(steps ~ interval, activity, FUN="mean")
 plot(interval_steps$interval, interval_steps$steps, type="l", ylab="Average Number of Steps Taken", xlab="5-Minute Interval", main="Average Number of Steps Taken Across All Days per Interval")
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-6-1.png) 
+![](Figures/unnamed-chunk-6-1.png) 
 
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -146,7 +152,7 @@ clean_data_sum <- aggregate(steps ~ date, clean_data, sum)
 hist(clean_data_sum$steps, xlab="Total Number of Steps per Day", main="Total Number of Steps Taken Each Day", col="blue")
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-10-1.png) 
+![](Figures/unnamed-chunk-10-1.png) 
 
 ```r
 ## Mean and median of the new data set
@@ -202,9 +208,10 @@ xyplot(mean ~ interval | weekday, weekdays_means,
         lwd=1, 
         xlab="Interval", 
         ylab="Number of steps", 
+        main="Average Number of Steps per 5-Minute Interval Averaged Across Each Weekday",
         layout=c(1,2))
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-12-1.png) 
+![](Figures/unnamed-chunk-12-1.png) 
 
 ----------------------------------------------------------------------------------
