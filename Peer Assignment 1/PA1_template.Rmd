@@ -1,7 +1,7 @@
 ---
 title: "Reproducible Research: Peer Assessment 1" 
 author: "Amber Beasock"
-date: "`r format(Sys.Date(), '%d %b %Y')`"
+date: "18 December 2015"
 output: 
     html_document:
         keep_md: true

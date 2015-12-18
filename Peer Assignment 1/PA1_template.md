@@ -1,6 +1,6 @@
 # Reproducible Research: Peer Assessment 1
 Amber Beasock  
-`r format(Sys.Date(), '%d %b %Y')`  
+18 December 2015  
 
 ----------------------------------------------------------------------------------
 
