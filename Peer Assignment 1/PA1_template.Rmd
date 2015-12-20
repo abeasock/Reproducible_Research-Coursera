@@ -37,6 +37,7 @@ activity_all <- read.csv("activity.csv")
 ```
     
 2\. Process/transform the data (if necessary) into a format suitable for your analysis
+  
 Not done at this step
   
 ----------------------------------------------------------------------------------
