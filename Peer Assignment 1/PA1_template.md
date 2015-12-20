@@ -95,7 +95,6 @@ plot(interval_steps$interval, interval_steps$steps, type="l", ylab="Average Numb
 
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
-
 ```r
 interval_steps[which.max(interval_steps$steps),]
 ```
@@ -112,7 +111,6 @@ Note that there are a number of days/intervals where there are missing values (c
 
 1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)
 
-
 ```r
 sum(is.na(activity_all$steps))
 ```
@@ -126,7 +124,6 @@ sum(is.na(activity_all$steps))
 The missing values will be filled in with mean for that 5-minute interval. The original data set with the missing values is stored in `activity_all` and the average number of steps per interval is stored in the data set `interval_steps`
 
 3. Create a new dataset that is equal to the original dataset but with the missing data filled in.
-
 
 ```r
 ## Create a new dataset from original dataset the with missing value
@@ -180,7 +177,6 @@ Use the dataset with the filled-in missing values for this part (`clean_data`).
 
 1. Create a new factor variable in the dataset with two levels – “weekday” and “weekend” indicating whether a given date is a weekday or weekend day.
 
-
 ```r
 ## First, covert the date variable from factor to date, use the weekday() function to obtain the day of the week and put this  into a new variable
 clean_data$days <- weekdays(as.Date(clean_data$date))
@@ -194,7 +190,6 @@ clean_data$weekday <- as.factor(clean_data$weekday)
 
 
 2. Make a panel plot containing a time series plot (i.e. `type = "l"`) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).
-
 
 ```r
 ## First, calculate the average number of steps taken per 5-minute interval averaged across all day types
