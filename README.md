@@ -1,4 +1,4 @@
-# Reproducible_Research-Coursera
+# Reproducible Research-Coursera
 
 This course featured two projects. My projects can be viewed in the the folders "Peer Assignment 1" and "Peer Assignment 2." 
 
