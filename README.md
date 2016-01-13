@@ -1,5 +1,6 @@
-# Reproducible Research 
-## by Johns Hopkins University on Coursera
+# Reproducible Research
+## Johns Hopkins University on Coursera
+### December 2015
 
 This course featured two projects. My projects can be viewed in the the folders "Peer Assignment 1" and "Peer Assignment 2." 
 
